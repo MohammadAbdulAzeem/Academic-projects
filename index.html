@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<style>
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300&display=swap");
+
+
+    *{
+        margin: 0;
+        padding: 0;   
+    }
+
+   
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 1rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* variables */
+:root {
+  --main-color: #d90429;
+  --text-color: #020102;
+  --bg-color: #fff;
+}
+/* Custom Scroll Bar */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 5rem;
+  background: var(--text-color);
+}
+
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.5;
+        }    
+
+        header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    background-color: black;
+}
+
+.logo {
+    height: 8vh;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 2vw;
+}
+
+nav ul li {
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3vh 1.4vw;
+    background-color: black;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.active, nav ul li:hover {
+   background-color: red;
+}
+
+.active, nav ul li a:hover {
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: 60vw;
+    margin: 0 auto;
+    overflow: hidden;  
+    border-bottom: 2px solid gray;
+    position: relative;
+    background-image: linear-gradient(black, white);
+}
+.slider {
+  
+}
+/* Image Styling */
+.slide {
+    width: 100%;
+    height: 500px; 
+    object-fit: contain; 
+    display: none; 
+}
+/* Display the first image */
+.slider img:first-child {
+    
+    display: block;
+}
+/* Image Sizeing */
+img.slide{
+    width: 60%;
+    position: relative;
+    top: 8vw;
+    left: 19vw;
+}
+/* Model Text Styling */
+.model{
+    font-size: 2.4vw;
+    color: white;
+    position: absolute;
+    bottom: 1.0vw; 
+    left: 50%;
+    width: 70%;
+    bottom: 11%;
+    transform: translateX(-50%);
+    background-color: black; 
+}
+/* Display the first model name */
+.slider h1:first-of-type {
+    display: block;
+}
+/* Navigation Buttons */
+.prev{
+    left: 100px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.next {
+    right: 100px;
+    border-radius: 5px 0 0 5px;
+}
+.prev:hover, .next:hover {
+    color: red;
+    border: 1px solid red;
+    background-color: white;
+}
+/* Details Button */
+#details {
+    position: absolute;
+    bottom: 1vw;
+    left: 50vw;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 1.5vw;
+    color: #fff;
+    background-color: red;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+#details:hover {
+    border: 3px solid red;
+    color: red;
+    background-color: white;
+}    
+    .brand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+    height: 12%;
+    top: 0%;
+    left: 25%;
+   
+    }
+    .btn{
+    width: 5.6vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 1vw;
+    color: white;
+    font-size: 1.1vw;
+    background-image: linear-gradient(rgb(114, 4, 4), black);
+    }
+    .brand img {
+        max-width: 100%;
+       
+    }
+#HONDA,img{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    font-weight: bold;
+}
+#SUZUKI,img{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    font-weight: bold;
+}
+#TOYOTA,img{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    font-weight: bold;
+}
+#HYUNDAI,img{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    font-weight: bold;
+}
+#JEEP,img{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    font-weight: bold;
+    background-image: ;
+}
+
+   .active,.btn:hover{
+    background-image: linear-gradient(rgb(255, 0, 0), black);
+    color: white;
+   }
+    .active{
+        background-color: red;
+        color: #fff;
+        scale: 1.1;
+        border: 1px solid white;
+    }
+    .as{
+        border-top: 3px solid #d90429;
+        width: 100%;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #020102;
+        color: white;
+    }
+
+    .footer {
+  background: var(--text-color);
+  
+  color: #f6f6f6;
+  border-top: 2px solid var(--main-color);
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 30vh;
+  background-color: black;
+  background-image: linear-gradient(black, rgb(0, 0, 0));
+}
+.footer-container .logo {
+  color: var(--bg-color);
+  margin-bottom: 1rem;
+}
+.footer-container .footer-box {
+  display: flex;
+  flex-direction: column;
+}
+.social {
+  display: flex;
+  align-items: center;
+}
+.social a {
+  font-size: 24px;
+  color: var(--bg-color);
+  margin-right: 1rem;
+}
+.social a:hover {
+  color: var(--main-color);
+}
+.footer-box h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.footer-box a,
+.footer-box p {
+  color: #818181;
+  margin-bottom: 10px;
+}
+.footer-box a:hover {
+  color: var(--main-color);
+}
+.copyright {
+  padding: 20px;
+  text-align: center;
+  color: var(--bg-color);
+  background: var(--text-color);
+}
+
+    @media (max-width: 900px){
+        img.slide{
+    width: 80%;
+    position: ;
+    bottom: 50%;
+    left: 70px;
+    top: -20px;
+   
+   
+        }
+.prev ,.next{
+    padding: 8px;
+ font-size: 1.9vw;
+  margin: -80px;
+  top: 320px;
+  
+}
+}
+    
+</style>
+    <body> 
+        <header>
+            <div><!-- Logo -->
+           
+            <a class="navbar-brand" href="\index.html">
+                <img src="home/logo.png" alt="AutoWorld Logo" class="logo">
+            </a>
+            </div>
+    
+            <!-- Navigation Menu -->
+            <nav>
+                <ul>
+                    <li><a href="\index.html">Home</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Dealers</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Finance</a></li>
+                    <li><a href="#">Compare</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="container">
+            <div class="brand">
+                <button class="btn" id="HONDA"><img src="btn logo\honda.webp" alt="">HONDA</button>
+                <button class="btn" id="SUZUKI"><img src="btn logo\suzuki.webp" alt="">SUZUKI</button>
+                <button class="btn" id="TOYOTA"><img src="btn logo\TOyo.webp" alt="">TOYOTA</button>
+                <button class="btn" id="HYUNDAI"><img src="btn logo\hyundai.webp" alt="">HYUNDAI</button>
+                <button class="btn" id="JEEP"><img src="btn logo/jeep-logo-.webp" alt=""><br>JEEP</button>
+                <!-- <button id=""><img src="" alt=""></button> -->
+                <!-- <button id=""><img src="" alt=""></button> -->
+             </div>
+
+            <div class="slider" id="slider1">
+                <img class="slide" src="cars/honda/Honda Amaze 1.2 E MT Petrol/test_1f5hdZi.webp" alt="Image 1">
+                <a id="details" href="Honda Amaze 1.2 E MT Petrol.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Honda</span> Amaze 1.2 E MT Petrol</h1>
+                <img class="slide" src="cars/honda/Honda City 1.5 SV-R/test_wwlOYJU.webp" alt="Image 2">
+                <a id="details" href="Honda City 1.5 SV-R.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Honda</span> City 1.5 SV-R</h1>
+                <img class="slide" src="cars/honda/Honda Elevate V/test_XEeBXz1.webp" alt="Image 3">
+                <a id="details" href="Honda Elevate V.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Honda</span> Elevate V</h1>
+                    
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                
+            </div>
+        
+            
+
+            <div class="slider" id="slider2" >
+                <img class="slide" src="cars/suzuki/Maruti Suzuki Ciaz 1.5 Sigma MT/test_N8p8rcZ.webp" alt="Image 1">
+                <a id="details" href="Maruti Suzuki Ciaz 1.5 Sigma MT.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Suzuki</span> Ciaz 1.5 Sigma MT</h1>
+                <img class="slide" src="cars/suzuki/Maruti Suzuki Baleno 1.2 Sigma/test_j3OZYQI.webp" alt="Image 2">
+                <a id="details" href="Maruti Suzuki Baleno 1.2 Sigma.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Suzuki</span> Baleno 1.2 Sigma</h1>
+                <img class="slide" src="cars/suzuki/Maruti Suzuki Dzire VXi/test_IjxrYtV.webp" alt="Image 3">
+                <a id="details" href="Maruti Suzuki Dzire VXi.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Suzuki</span> Dzire VXi</h1>
+                <img class="slide" src="cars/suzuki/Maruti Suzuki Invicto Zeta Plus 7 STR/test_v6S6LoI.webp" alt="Image 4">
+                <a id="details" href="Suzuki Invicto Zeta Plus 7 STR.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Suzuki</span> Invicto Zeta Plus 7 STR</h1>
+                <img class="slide" src="cars/suzuki/Maruti Suzuki XL6 Zeta/test_C1ldQdB.webp" alt="Image 5">
+                <a id="details" href="Maruti Suzuki XL6 Zeta.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Suzuki</span> XL6 Zeta</h1>
+                 
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                
+            </div>
+
+            <div class="slider" id="slider3" >
+                <img class="slide" src="cars/Toyota/Toyota Fortuner 2.7 4x2 MT/test_nDFugWE.webp" alt="Image 1">
+                <a id="details" href="Toyota Fortuner 2.7 4x2 MT.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Toyota</span> Fortuner 2.7 4x2 MT</h1>
+                <img class="slide" src="cars/Toyota/Toyota Fortuner Legender 2.8 4x2 AT/test_GjDuN4q.webp" alt="Image 2">
+                <a id="details" href="Toyota Fortuner Legender 2.8 4x2 AT.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Toyota</span> Fortuner Legender 2.8 4x2 AT</h1>
+                <img class="slide" src="cars/Toyota/Toyota Innova Hycross 2.0 GX 7 STR CVT/test_QszXmUz.webp" alt="Image 3">
+                <a id="details" href="Toyota Innova Hycross 2.0 GX 7 STR CVT.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Toyota</span> Innova Hycross 2.0 GX 7 STR CVT</h1>
+                <img class="slide" src="cars/Toyota/Toyota Urban Cruiser Hyryder Neodrive E/test_LdC4ZHQ.webp" alt="Image 4">
+                <a id="details" href="Toyota Urban Cruiser Hyryder Neodrive E.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Toyota</span> Urban Cruiser Hyryder Neodrive E</h1>
+
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                
+            </div>
+
+            <div class="slider" id="slider4" >
+                <img class="slide" src="cars/Hyundai/Hyundai Aura 1.2 S CNG/test_OERvtqS.webp" alt="Image 1">
+                <a id="details" href="Hyundai Aura 1.2 S CNG.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Hyundai</span> Aura 1.2 S CNG</h1>
+                <img class="slide" src="cars/Hyundai/Hyundai Creta N Line N10 DCT/test_d5ItIRT.webp" alt="Image 2">
+                <a id="details" href="Hyundai Creta N Line N10 DCT.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Hyundai</span> Creta N Line N10 DCT</h1>
+                <img class="slide" src="cars/Hyundai/Hyundai Creta 1.5 E/test_O2zOZWW.webp" alt="Image 3">
+                <a id="details" href="Hyundai Creta 1.5 E.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Hyundai</span> Creta 1.5 E</h1>
+               
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                
+            </div>
+
+            <div class="slider" id="slider5" >
+                <img class="slide" src="cars/jeep/Jeep Compass 2.0 Sport Diesel/test_0LvSFM6.webp" alt="Image 1">
+                <a id="details" href="Jeep Compass 2.0 Sport Diesel.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Jeep</span> Compass 2.0 Sport Diesel</h1>
+                <img class="slide" src="cars/jeep/Maruti Suzuki Jimny Zeta/test_WmwPUZF.webp" alt="Image 2">
+                <a id="details" href="jeep Jimny Zeta.html">Explore More ></a>
+                <h1 class="model"><span style="color: red;">Suzuki</span> Jimny Zeta</h1>
+               
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+                
+            </div>
+        </div> 
+        <!-- slider end -->
+      <div>
+        <h1 class="as">Auto<span style="color: red;">   World</span></h1>
+<img src="Mohammad Abdul Azeem/home/logo.png" alt="">
+      </div>
+         <!-- Footer -->
+      <section class="footer">
+        <div class="footer-container container">
+          <div class="footer-box">
+            <a href="#" class="logo">Auto<span>World</span></a>
+            <div class="social">
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+              <a href="#"><i class="bx bxl-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-box">
+            <h3>page</h3>
+            <a href="#">Home</a>
+            <a href="#">Cras</a>
+            <a href="#blog">Our Blog</a>
+            <a href="#">Parts</a>
+            <a href="#">Sales</a>
+          </div>
+          <div class="footer-box">
+            <h3>Legal</h3>
+            <a href="#">Privacy</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+          <div class="footer-box">
+            <h3>Contact</h3>
+            <p>Pakistan</p>
+            <p>United States</p>
+            <p>Japan</p>
+            <p>Germany</p>
+          </div>
+        </div>
+      </section>
+      <!-- Copyright -->
+      <div class="copyright">
+        <p>&#169; Duke Safwan All Right Reserved</p>
+      </div>
+      
+
+
+</body>
+<script>
+    let currentSlide = 0;
+let activeSliderId = 'slider1';
+
+function showSlide(n) {
+    const activeSlider = document.getElementById(activeSliderId);
+    const slides = activeSlider.querySelectorAll('.slide');
+    const headings = activeSlider.querySelectorAll('.model');
+    const exploreMore = activeSlider.querySelectorAll('#details');
+    if (n >= slides.length) currentSlide = 0;
+    if (n < 0) currentSlide = slides.length - 1;
+    
+    slides.forEach((slide, index) => {
+        slide.style.display = (index === currentSlide) ? 'block' : 'none';
+        headings[index].style.display = (index === currentSlide) ? 'block' : 'none';
+        exploreMore[index].style.display = (index === currentSlide) ? 'block' : 'none';
+    });
+}
+
+function changeSlide(n) {
+    showSlide(currentSlide += n);
+}
+
+// Functions to switch sliders
+function fun1() {
+    activeSliderId = 'slider1';
+    showActiveSlider();
+}
+
+function fun2() {
+    activeSliderId = 'slider2';
+    showActiveSlider();
+}
+
+function fun3() {
+    activeSliderId = 'slider3';
+    showActiveSlider();
+}
+
+function fun4() {
+    activeSliderId = 'slider4';
+    showActiveSlider();
+}
+
+function fun5() {
+    activeSliderId = 'slider5';
+    showActiveSlider();
+}
+
+function showActiveSlider() {
+    // Hide all sliders
+    document.querySelectorAll('.slider').forEach(slider => {
+        slider.style.display = 'none';
+    });
+
+    // Show the active slider
+    document.getElementById(activeSliderId).style.display = 'block';
+    
+    // Reset the slide index and show the first slide
+    currentSlide = 0;
+    showSlide(currentSlide);
+}
+
+// Event listeners for buttons
+document.getElementById('HONDA').addEventListener('click', fun1);
+document.getElementById('SUZUKI').addEventListener('click', fun2);
+document.getElementById('TOYOTA').addEventListener('click', fun3);
+document.getElementById('HYUNDAI').addEventListener('click', fun4);
+document.getElementById('JEEP').addEventListener('click', fun5);
+
+function page(){
+    
+}
+document.getElementById('details').addEventListener('click', page);
+
+
+// Initialize the first slider
+fun3();  // or showActiveSlider();
+
+//chack
+const buttons = document.querySelectorAll("#HONDA,#TOYOTA,#SUZUKI,#HYUNDAI,#JEEP");
+
+
+function removeActiveClass() {
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+}
+
+buttons.forEach(button =>{
+    button.addEventListener('click',function(){
+        removeActiveClass();
+        this.classList.add('active');
+    });
+});
+  
+
+</script>
+</html>

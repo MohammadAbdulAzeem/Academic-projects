@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;   
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.5;
+           
+        }    
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    background-color: black;
+}
+
+.logo {
+    height: 8vh;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 2vw;
+}
+
+nav ul li {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3vh 1vw;
+    background-color: black;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.active, nav ul li:hover {
+    background-color: red;
+}
+
+.active, nav ul li a:hover {
+    color: white;
+}
+
+    .container{ 
+     width: 100%;
+    height: 62vh; 
+   display: flex;
+    margin: 0 auto;
+    overflow: hidden;  
+   border-bottom: 2px solid gray;
+    padding: 20px;
+    position: relative;
+  background-image: linear-gradient(black, white);
+}
+
+img#pic{
+    justify-content: center;
+    width: 60vw;
+    margin-top: 6vw;
+    margin-left: 3vh;
+    
+}
+
+    .model{
+    color: white;
+    background-color: black;
+   position: absolute;
+   top: 3%;
+   left: 25%;
+   font-size: 1.9vw;
+   }
+
+   .price{
+    color: black;
+   position: absolute;
+border: 2px solid red;
+   left: 35%;
+   bottom: 3%;
+    background: none;
+    font-size: 2.2vw;
+   }
+   
+   .colors{
+        position: absolute;
+        bottom: 10px;
+        margin-left: 8%;
+        
+    }
+    .color-haeding{
+        margin-left: 3%;
+        margin-bottom: 1%;
+        color: black;
+        font-size: 2.0vw;
+        background-color: beige;
+    }
+    .colors, button{
+        margin: 3px;
+    }
+   
+    #btn1{      
+        cursor: pointer;
+        width:  40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(158, 91, 10);
+    }
+    #btn2{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color:rgb(206, 20, 20); 
+    }
+    #btn3{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: gray;
+    }
+    #btn4{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #0e3568;
+    }
+    /*#btn5{      
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #4e3535;
+    }*/
+
+.active,.btns:hover{
+    border: 3px solid red;
+    scale: 1.2;
+   }
+
+   .Features {
+            overflow-y: auto; 
+            max-height: 62vh; 
+            position: relative;
+            border-radius: 5px;
+            border: 2px solid gray;
+            max-width: 32%;
+            margin: 0 auto;
+            padding: 6px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           top: 1px;
+            right: 1%;
+        }
+
+        .Features-haeding {
+            color: red;
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            font-size: 2.2vw;
+            margin-bottom: 2px;
+            padding: px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-size: 1.6vw;
+            padding: 0.2vw;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.5vw; 
+        }
+
+        li {
+            margin: 0.4vw;
+        }
+        /* Custom Scrollbar Styling */
+        .Features::-webkit-scrollbar {
+        width: 1em;
+        }
+        .Features::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+        }
+        .Features::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+        }
+        .Features::-webkit-scrollbar-button {
+        background-color: white;
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 16px;
+        width: 1em;
+        -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .Features::-webkit-scrollbar-button:horizontal:increment {
+        background-image: url(https://dl.dropboxusercontent.com/u/55165267/icon2.png);
+        }
+        .Features::-webkit-scrollbar-button:end:increment {
+        background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQwNC4zMDggNDA0LjMwOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDA0LjMwOCA0MDQuMzA5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTAsMTAxLjA4aDQwNC4zMDhMMjAyLjE1MSwzMDMuMjI5TDAsMTAxLjA4eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+        }
+    .Features::-webkit-scrollbar-button:start:decrement {
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI1NSAyNTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1NSAyNTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iYXJyb3ctZHJvcC11cCI+CgkJPHBvbHlnb24gcG9pbnRzPSIwLDE5MS4yNSAxMjcuNSw2My43NSAyNTUsMTkxLjI1ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)
+    }
+
+    @media (max-width: 1200px) {
+        img#pic {
+            height: ;
+            width: 60vw;
+    margin-top: 8%;
+    margin-left: 2%;   
+      
+    }
+    .container{
+        position: absolute;
+       max-height: 45vw;
+    }
+    .model {
+        font-size: 2.2vw;
+        top: 3%;
+         left: 18%;
+    }
+    .price {
+        bottom: 3%;   
+    }
+    .features{ 
+  max-height: 90px; 
+    }
+
+    .colors{
+        bottom: 1%;    
+    }
+}
+
+
+@media (max-width: 950px){
+  
+    .features{ 
+        margin-bottom: -1.2vw;
+    }
+
+    .price {
+        font-size: 2.4vw;
+    }
+        
+    .color-haeding {
+        margin-left: 0.5vw;
+       font-size: 2.4vw;
+    }
+
+   #btn1,#btn2,#btn3,#btn4,#btn5 {
+    width: 30px;
+    height: 30px;
+    }
+}
+
+@media (max-width: 862px){
+
+    .features{ 
+  max-height: 900px;
+  margin-bottom: -2.9vw;
+    }
+   
+}
+
+</style>
+<body>
+    <header>
+        <div><!-- Logo -->
+        <img src="home/logo.png" alt="AutoWorld Logo" class="logo">
+        <a class="navbar-brand" href="#">
+           
+        </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="warranty.html">Warranty</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="comparison.html">Compare</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+            
+            <div class="container" >
+                
+               
+
+                <div class="car">
+                    <h1 class="model"><span style="color: red;">Suzuki</span>  XL6 Zeta</h1>
+                    <img id="pic" src="cars/suzuki/Maruti Suzuki XL6 Zeta/test_31gHk4F.webp" alt="">
+                    <h2 class="price"> <span style="color: red;">PKR</span> PKR 4,238,100</h2>
+                </div>
+
+                <div class="Features">
+                    <h1 class="Features-haeding"> Specifications & Features</h1>
+    
+                    <div class="specs">
+                        <h2>Specifications</h2>
+                        <ul>
+                            <li><strong>Engine:</strong> 1.2-liter i-VTEC Petrol Engine</li>
+                            <li><strong>Displacement:</strong> 1199 cc</li>
+                            <li><strong>Power Output:</strong> 88-90 bhp</li>
+                            <li><strong>Torque:</strong> 110 Nm</li>
+                            <li><strong>Transmission:</strong> 5-speed Manual Transmission (MT)</li>
+                            <li><strong>Fuel Efficiency:</strong> 18-19 km/l</li>
+                        </ul>
+                    </div>
+            
+                    <div class="dimensions">
+                        <h2>Dimensions and Capacity</h2>
+                        <ul>
+                            <li><strong>Seating Capacity:</strong> 5 passengers</li>
+                            <li><strong>Boot Space:</strong> 420 liters</li>
+                            <li><strong>Fuel Tank Capacity:</strong> 35 liters</li>
+                        </ul>
+                    </div>
+            
+                    <div class="features">
+                        <h2>Features</h2>
+                        <ul>
+                            <li><strong>Safety:</strong> Dual airbags, ABS with EBD</li>
+                            <li><strong>Interior:</strong> Basic fabric upholstery, manual air conditioning</li>
+                            <li><strong>Infotainment:</strong> Basic audio system with USB and Bluetooth</li>
+                            <li><strong>Wheels:</strong> Steel wheels with wheel covers</li>
+                            <li><strong>Exterior:</strong> Body-colored bumpers and door handles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="colors">
+                    <h1 class="color-haeding">Available color<span style="color: red;">s</span></h1>
+                    <button class="btns" id="btn1" onclick="change1()"></button>
+                    <button class="btns" id="btn2" onclick="change2()"></button>
+                    <button class="btns" id="btn3" onclick="change3()"></button>
+                    <button class="btns" id="btn4" onclick="change4()"></button>
+                    <button class="btns" id="btn5" onclick="change5()"></button>     
+                </div>
+             
+
+            </div>   
+</body>
+<script>
+    function change1()
+    {
+        document.getElementById("pic").src='cars/suzuki/Maruti Suzuki XL6 Zeta/test_31gHk4F.webp';
+    }
+    function change2()
+    {
+        document.getElementById("pic").src='cars/suzuki/Maruti Suzuki XL6 Zeta/test_C1ldQdB.webp';
+    }
+    function change3()
+    {
+        document.getElementById("pic").src='cars/suzuki/Maruti Suzuki XL6 Zeta/test_ls40xp1.webp';
+    }
+    function change4()
+    {
+        document.getElementById("pic").src='cars/suzuki/Maruti Suzuki XL6 Zeta/test_mIvytuW.webp';
+    }
+    function change5()
+    {
+        document.getElementById("pic").src='cars/suzuki/Maruti Suzuki XL6 Zeta/test_PBYYtOL.webp';
+    }
+   
+    
+
+const buttons = document.querySelectorAll("#btn1,#btn2,#btn3,#btn4,#btn5");
+
+
+function removeActiveClass() {
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+}
+
+buttons.forEach(button =>{
+    button.addEventListener('click',function(){
+        removeActiveClass();
+        this.classList.add('active');
+    });
+});
+    
+   
+
+
+
+
+    
+
+</script>
+</html>
